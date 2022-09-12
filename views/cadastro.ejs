@@ -7,16 +7,26 @@
     <title>ESTUDO PRÁTICO MULTER</title>
 </head>
 <body>
-    <h1>formulário para Upload dos dados</h1>
+    <h1>Formulário para Registro do Usuário</h1>
     
-    <form action="/cadastro" method="post" enctype="multipart/form-data">
-        COLETAR: <input type="text" name="registro">
-        <button>Enviar</button>
+    <!-- Warning: Atributo Enctype para processamento de arquivo-->
+    <form action="/cadastro" method="post" enctype="multipart/form-data"> 
+        
+        <label>Nome Completo:</label>
+        <input type="text" name="nomeUsuario">
+
+        <label>E-mail:</label>
+        <input type="email" name="emailUsuario">
+
+        <label>Imagem de perfil:</label>
+        <input type="file" name="imagemUsuario">
         <br>
         <br>
-        <button><a href="/">VOLTAR</a></button>
+        <button type="submit">REGISTRAR</button>
 
     </form>
+    <br>
+    <button><a href="/">Voltar</a></button>
     
 </body>
 </html>

@@ -1,6 +1,9 @@
 // Requizicao do modulo NPM Express
 const express = require('express');
 
+// Requizicao do Método Multer para trabalhar com processamento de arquivos do lado do servidor
+const multer = require('multer');
+
 // Confiuracao do modulo express para chamar como função como router
 const router = express.Router();
 
