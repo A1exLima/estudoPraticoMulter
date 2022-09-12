@@ -10,7 +10,7 @@ const IndexController = require('../controllers/IndexController');
 // Rota para página HOME
 router.get('/', IndexController.index);
 
-// Rotas para as páginas do METODO POST
+// Rotas para as páginas do METODO POST (trabalhando com a biblioteca NPM multer)
 router.get('/registro', IndexController.formRegistro);
 router.post('/registro', IndexController.processamentoFormRegistro);
 
