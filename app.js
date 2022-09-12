@@ -1,6 +1,3 @@
-
-
-
 // Requizicao do modulo NPM Express
 const express = require('express');
 

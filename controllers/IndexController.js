@@ -8,7 +8,7 @@ module.exports ={
 
     // Redenrizacao da view form para coleta de dados via Multer
     formRegistro: (req, res) => {
-        res.render('registro.ejs');
+        res.render('cadastro.ejs');
 
     },
 

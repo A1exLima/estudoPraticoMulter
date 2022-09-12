@@ -11,8 +11,8 @@ const IndexController = require('../controllers/IndexController');
 router.get('/', IndexController.index);
 
 // Rotas para as páginas do METODO POST (trabalhando com a biblioteca NPM multer)
-router.get('/registro', IndexController.formRegistro);
-router.post('/registro', IndexController.processamentoFormRegistro);
+router.get('/cadastro', IndexController.formRegistro);
+router.post('/cadastro', IndexController.processamentoFormRegistro);
 
 // Exportando o index router para ser usado no IndexController
 module.exports = router; 
