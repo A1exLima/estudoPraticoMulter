@@ -19,11 +19,6 @@ router.get('/', IndexController.index);
 // Funcao que ira receber os dados e passar para o storage fazer o trabalho de destination e filename
 const upload = multer({ storage: multerDiskStorage});
 
-
-
-
-
-
 // Rotas para as páginas do METODO POST (trabalhando com a biblioteca NPM multer)
 router.get('/cadastro', IndexController.formRegistro);
 router.post('/cadastro', upload.single('imagemUsuario'), IndexController.processamentoFormRegistro);
