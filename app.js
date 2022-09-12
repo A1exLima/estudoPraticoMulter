@@ -1,5 +1,5 @@
 // Requizicao do modulo NPM Express
-const express = require('express');
+const express = require('express');  
 
 // Confiuracao do modulo express para chamar como função
 const app = express();
