@@ -14,6 +14,7 @@ module.exports ={
 
     // Processamento dos dados enviados via multer
     processamentoFormRegistro: (req, res) => {
+        res.send('TESTE');
 
     }
 
