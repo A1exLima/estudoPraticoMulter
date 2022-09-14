@@ -25,7 +25,11 @@ module.exports ={
     // Processamento dos dados enviados via multer
     processamentoFormRegistro: (req, res) => {
 
-        if (req.file !== undefined) {
+        // Verifica se o req.file é false (undefined) se sim executar o código abaixo
+        if (!req.file) {
+
+            return res.render('imagemNaoEnviada.ejs');
+        } else {
 
             // Captura dos dados (NOME USUÁRIO E SENHA) enviados via Método Post através do req.body e salvamento em uma variavel
             let dados = req.body;
@@ -40,13 +44,7 @@ module.exports ={
             fs.writeFileSync('./database/registroUsuarios.json', JSON.stringify(registroUsuarios, null, 4));
 
             res.render('confirmacaoRegistro.ejs');
-
-        } else {
-
-            return res.render('imagemNaoEnviada.ejs');
         }
-
-        
 
     }
 
