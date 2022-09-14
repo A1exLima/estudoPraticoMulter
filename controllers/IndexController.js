@@ -49,5 +49,3 @@ module.exports ={
     }
 
 }
-
-// Dúvida, Perguntar ao professor como faz para capturar somente o nome da imagem salva e gravar no database registroUsuários
