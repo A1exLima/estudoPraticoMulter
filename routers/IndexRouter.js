@@ -21,6 +21,9 @@ const upload = multer({ storage: multerDiskStorage});
 
 // Rotas para as páginas do METODO POST (trabalhando com a biblioteca NPM multer)
 router.get('/cadastro', IndexController.formRegistro);
+
+// No segundo parametro temos o middleware de rota para chamar a funcao multer onde indicamos o caminho onde sera salvo o arquivo
+// e nome desse arquivo
 router.post('/cadastro', upload.single('imagemUsuario'), IndexController.processamentoFormRegistro);
 
 // Exportando o index router para ser usado no IndexController
