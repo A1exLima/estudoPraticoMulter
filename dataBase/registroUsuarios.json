@@ -5,10 +5,12 @@
     },
     {
         "nomeUsuario": "Alex",
-        "emailUsuario": "1@gmai.com"
+        "emailUsuario": "alex.lima@gmail.com",
+        "avatarUsuario": "imagemUsuario_1663159727283.jpg"
     },
     {
-        "nomeUsuario": "Joao",
-        "emailUsuario": "2@gmail.com"
+        "nomeUsuario": "Alex",
+        "emailUsuario": "2@gmail.com",
+        "avatarUsuario": "imagemUsuario_1663165631417.jpg"
     }
 ]

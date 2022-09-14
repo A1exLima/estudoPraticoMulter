@@ -1,4 +1,5 @@
 // Requisicao do modulo nativo file system
+const { json } = require('express');
 const fs = require('fs');
 
 // Requisicao do banco de dados que contem os usuários e senhas
@@ -24,16 +25,28 @@ module.exports ={
     // Processamento dos dados enviados via multer
     processamentoFormRegistro: (req, res) => {
 
-        // Captura dos dados (NOME USUÁRIO E SENHA) enviados via Método Post através do req.body e salvamento em uma variavel
-        let dados = req.body;
+        if (req.file !== undefined) {
 
-        // Inclusao do nome de usuario e senha da ultima posicao do array do banco de dados onde é guardado todos os usuarios e senhas
-        registroUsuarios.push(dados);
+            // Captura dos dados (NOME USUÁRIO E SENHA) enviados via Método Post através do req.body e salvamento em uma variavel
+            let dados = req.body;
 
-        // conversao dos dados em tipo Json, e atraves da funcao nativa fs o salvamento desses dados dentro da database em formato json
-        fs.writeFileSync('./database/registroUsuarios.json', JSON.stringify(registroUsuarios, null, 4));
+            // Inclusao do nome do arquivo da imagem do usuário
+            dados.avatarUsuario = req.file.filename;
 
-        res.render('confirmacaoRegistro.ejs');
+            // Inclusao do nome de usuario e senha da ultima posicao do array do banco de dados onde é guardado todos os usuarios e senhas
+            registroUsuarios.push(dados);
+
+            // conversao dos dados em tipo Json, e atraves da funcao nativa fs o salvamento desses dados dentro da database em formato json
+            fs.writeFileSync('./database/registroUsuarios.json', JSON.stringify(registroUsuarios, null, 4));
+
+            res.render('confirmacaoRegistro.ejs');
+
+        } else {
+
+            return res.render('imagemNaoEnviada.ejs');
+        }
+
+        
 
     }
 
